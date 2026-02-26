@@ -1,0 +1,41 @@
+.page-container {
+  max-width: 1100px;
+  margin: 24px;
+}
+
+.profile-container {
+  display: grid;
+  gap: 18px;
+}
+
+@media (width > 700px) {
+  .profile-container {
+    grid-template-columns: minmax(100px, 1fr) 250px;
+    grid-template-areas: "text photo";
+  }
+}
+
+@media (width <= 700px) {
+  .profile-container {
+    grid-template-areas:
+      "photo"
+      "text";
+  }
+}
+
+.text {
+  grid-area: text;
+}
+
+.photo {
+  align-self: center;
+  grid-area: photo;
+  justify-self: center;
+}
+
+img {
+  border: thick double #32a111;
+  display: block;
+  height: 200px;
+  width: 200px;
+}
